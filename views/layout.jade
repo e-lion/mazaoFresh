@@ -9,14 +9,12 @@ html
 			+nav("Mazao Fresh", "dropdown_menu", "inverse")
 				+nav_item( "/", "active" ) Home
 				+nav_item( "/about" ) About Us
-				+nav_item( "/about" ) Product List
-				+nav_item( "/about" ) Orders & Deliveries
-				+nav_item( "/about" ) Home Delivery
+				+nav_item( "/products" ) Product List
+				+nav_item( "/orders" ) Orders & Deliveries
+				+nav_item( "/home_delivery" ) Home Delivery
 				+nav_item( "/contact" ) Contact Us
-				+nav_item_dropdown( "#" )( label="Dropdown" )
-						+nav_item( "#" ) Action
-						+nav_item( "#" ) Another action
-						+nav_item( "#" ) Something else here
+				+nav_item_dropdown( "#" )( label="Login" )
+						+nav_item( "/signup" ) Sign Up
 			div(id="content", class="main")
 				block content
 		div
