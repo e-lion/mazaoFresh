@@ -23,13 +23,25 @@ router.get('/newuser', function(req, res) {
 	res.render('newuser', {title: "Add New User"});
 });
 
-router.get('/orders', function(res, req) {
-	res.render('orders', {title: "Orders & Deliveries"});
+router.get('/orders', function(req, res) {
+	res.render('orders');
 });
-
 /*GET About Page*/
 router.get('/about', function(req, res) {
 	res.render('about', {title:"About Mazao"})
+});
+
+/*GET Product List Page*/
+router.get('/products', function(req, res) {
+	res.render('products', {title: "Mazao Products"});
+});
+
+router.get('/home_delivery', function(req, res) {
+	res.render('homedelivery');
+});
+
+router.get('/contact', function(req, res) {
+	res.render('contact');
 });
 
 /*POST to Add user service*/
