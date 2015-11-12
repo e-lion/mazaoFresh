@@ -10,4 +10,3 @@ A web app to deliver fresh fruit and vegtable in and around nairobi
 TODO
 -implement payment via MPESA, paypal, credit and debit cards
 -have a geo location live tracking feature
--
