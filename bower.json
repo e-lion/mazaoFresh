@@ -1,0 +1,22 @@
+{
+  "name": "mazaoFresh",
+  "description": "fresh fruit delivery app",
+  "main": "",
+  "authors": [
+    "e-lion <lionelngunjiri@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/e-lion/mazaoFresh",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jade-field-mixins": "*"
+  }
+}
