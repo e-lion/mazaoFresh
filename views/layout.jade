@@ -2,10 +2,15 @@ include mixins
 doctype html
 html
 	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-compatible' content="IE=edge")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title= title
-		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+
 	body
-		.container
+		div
 			+nav("Mazao Fresh", "dropdown_menu", "inverse")
 				+nav_item( "/", "active" ) Home
 				+nav_item( "/about" ) About Us
@@ -15,7 +20,11 @@ html
 				+nav_item( "/contact" ) Contact Us
 				+nav_item_dropdown( "#" )( label="Login" )
 						+nav_item( "/signup" ) Sign Up
-			div(id="content", class="main")
-				block content
-		div
-			footer &copy; Mazao Fresh
+		div(id="content", class="main")
+			block content
+		.footer
+			.container
+				p.text-muted &copy;Mazao Fresh 
+
+			script(src='https://code.jquery.com/jquery-1.11.3.min.js')
+			script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
