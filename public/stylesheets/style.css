@@ -37,3 +37,12 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+form {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.field {
+  padding-bottom: 20px;
+}

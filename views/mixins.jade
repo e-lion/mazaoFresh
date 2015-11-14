@@ -54,5 +54,14 @@ mixin button(style, href, size)
  
 		a( class=["btn", "btn-" + style, size], href=href )
 				block
+
+mixin field(args)
+	input.form-control(
+		type=args.type ? args.type : 'text'
+		name=args.name ? args.name : null
+		value=args.value ? args.value : null
+		placeholder=args.placeholder ? args.placeholder : null
+		class=attributes.class
+		id=attributes.id ? attributes.id : null)
  
 //- End navbar mixins

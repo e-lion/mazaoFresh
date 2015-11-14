@@ -1,11 +1,11 @@
 extends layout
+include mixins
 
 block content
-	.container
-		form.form-signin(action="/login", method="post")
-			h2.form-signin-heading Please sign in
-			input.input-block-level(type="text", name="username", placeholder="Email address")
-			input.input-block-level(type="password", name="password", placeholder="Password")
-			label.checkbox.
-				<input type="checkbox" value="remember-me" /> Remember me
-			button.btn.btn-large.btn-primary(type="submit") Sign in
+
+	form(name="adduser", method="post",action="/adduser")
+		+field({ type: 'text', name: 'username', value: 'name', placeholder: 'username' })
+		+field({ type: 'text', name: 'useremail', value: 'email@example.com', placeholder: 'usermail' })
+
+		button#btnSubmit(type="submit", class="btn btn-info btn-lg") Submit
+

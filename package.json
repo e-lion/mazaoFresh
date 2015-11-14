@@ -16,5 +16,8 @@
     "mongodb": "~2.0.33",
     "monk": "~1.0.1",
     "bower": "1.6.5"
+  },
+  "devDependencies": {
+    "gulp-install": "^0.6.0"
   }
 }

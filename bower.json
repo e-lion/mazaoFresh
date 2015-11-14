@@ -17,6 +17,5 @@
     "tests"
   ],
   "devDependencies": {
-    "jade-field-mixins": "*"
   }
 }
