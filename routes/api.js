@@ -10,6 +10,21 @@ var apiRoutes = express.Router();
 
 app.set('superSecret', config.secret);
 
+//user sign up middleware?
+apiRoutes.post('/register', function(req, res) {
+	var user = new User({
+		name: req.body.name,
+		password: req.body.password
+	});
+	user.save(function(err) {
+		if(err) throw err;
+			console.log('User saved!');
+			res.json({status: "success"});
+	});
+});
+
+
+
 //return a random message at /api
 apiRoutes.get('/', function(req, res) {
 	res.json({ message: 'Welcome to the coolest API on earth!'});	

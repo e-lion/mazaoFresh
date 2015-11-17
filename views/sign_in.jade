@@ -2,7 +2,7 @@ extends layout
 include mixins
 
 block content
-
+	//TODO: implemetn stricter form validation
 	form(name="user", method ="post", action="/api/authenticate")
 		+field({ type: 'text', name: 'name', placeholder: 'name' })
 		+field({ type: 'password', name: 'password', placeholder: 'password' })

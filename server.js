@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 
 app.use('/', routes);
-app.use('/login', sign_up);
+app.use('/sign_up', sign_up);
 app.use('/api', api);
 app.use('/sign_in', sign_in);
 
