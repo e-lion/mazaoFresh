@@ -7,7 +7,7 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		title= title
 		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
-		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/css/style.css')
 
 	body
 		div
@@ -19,7 +19,8 @@ html
 				+nav_item( "/home_delivery" ) Home Delivery
 				+nav_item( "/contact" ) Contact Us
 				+nav_item_dropdown( "#" )( label="Login" )
-						+nav_item( "/signup" ) Sign Up
+						+nav_item( "/sign_in" ) Sign In
+						+nav_item("/sign_up") Sign Up
 		div(id="content", class="main")
 			block content
 		.footer

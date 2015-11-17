@@ -1,0 +1,10 @@
+extends layout
+include mixins
+
+block content
+
+	form(name="user", method ="post", action="/api/authenticate")
+		+field({ type: 'text', name: 'name', placeholder: 'name' })
+		+field({ type: 'password', name: 'password', placeholder: 'password' })
+
+		button#btnSubmit(type="submit", class="btn btn-info btn-lg") Submit
