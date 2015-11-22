@@ -10,9 +10,8 @@ var mongoose = require('mongoose');
 var config = require('./config');
 
 var routes = require('./routes/index');
-var sign_up = require('./routes/sign_up');
 var api = require('./routes/api');
-var sign_in = require('./routes/sign_in');
+
 
 
 //view engine setup
@@ -36,9 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('dev'));
 
 app.use('/', routes);
-app.use('/sign_up', sign_up);
 app.use('/api', api);
-app.use('/sign_in', sign_in);
 
 
 app.listen(port);

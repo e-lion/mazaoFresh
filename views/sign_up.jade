@@ -1,12 +1,15 @@
 extends layout
-include mixins
+
 
 block content
 	//TODO: implement stricter form validation !!
-	h3(align="center") #{date}
+	p(align="center") #{date}
 	form(name="sign_up", method="post", action="/api/register")
-		+field({type: "text", name: "name", placeholder: "username"})
-		+field({type: "password", name: "password", placeholder: "enter password"})
+		p Name
+				input(type='text',name='name',placeholder='Enter your name',required)
+		p Password
+				input(type='password',name='password',placeholder='Enter your password',required)
+
 
 		button#btnSubmit(type="submit", class="btn btn-info btn-lg") Submit
 

@@ -1,31 +1,84 @@
-include mixins
 doctype html
 html
-	head
-		meta(charset='utf-8')
-		meta(http-equiv='X-UA-compatible' content="IE=edge")
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= title
-		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet")
-		link(rel='stylesheet', href='/css/style.css')
+head
+	// Import Google Icon Font
+	link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+	// Import materialize.css
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css")
+	link(rel="stylesheet" href="/css/style.css")
+	// Let browser know website is optimized for mobile
+	meta(name='viewport', content='width=device-width, initial-scale=1.0')
 
-	body
-		div
-			+nav("Mazao Fresh", "dropdown_menu", "inverse")
-				+nav_item( "/", "active" ) Home
-				+nav_item( "/about" ) About Us
-				+nav_item( "/products" ) Product List
-				+nav_item( "/orders" ) Orders & Deliveries
-				+nav_item( "/home_delivery" ) Home Delivery
-				+nav_item( "/contact" ) Contact Us
-				+nav_item_dropdown( "#" )( label="Login" )
-						+nav_item( "/sign_in" ) Sign In
-						+nav_item("/sign_up") Sign Up
-		div(id="content", class="main")
-			block content
-		.footer
+body
+	div
+		// Dropdown Structure
+		ul#dropdown1.dropdown-content
+			li
+				a(href='/sign_up') Sign Up
+			li
+				a(href='/sign_in') Sign In
+			li.divider
+			li
+				a(href='#!') Private Policy
+		ul#mobile-demo.side-nav
+					li
+						a(href='/') Home
+					li
+						a(href='/about') About
+					li
+						a(href='/orders') Place Orders
+					li
+						a(href='/products') Product List
+					li
+						a(href='/home_delivery') Delivery
+					li
+						a(href='/contacts') Contact Us
+		nav
+			.nav-wrapper.light-green.lighten-1
+				a.button-collapse(href='#', data-activates='mobile-demo')
+					i.material-icons menu
+					a#logo-container.brand-logo(href='#')
+						object#front-page-logo.responsive-img(type='image/png', data='img/mazao.png')
+
+				ul.right.hide-on-med-and-down
+					li.active
+						a(href='/') Home
+					li
+						a(href='/about') About
+					li
+						a(href='/orders') Place Order
+					li
+						a(href='/products') Product List
+					li
+						a(href='/home_delivery') Delivery
+					li
+						a(href='/contacts') Contact Us
+					li
+						a.dropdown-button(href='#!', data-activates='dropdown1')
+							| Login
+							i.material-icons.right arrow_drop_down
+	main
+		block content	
+	footer.page-footer.light-green.lighten-1
+		.container
+			.row
+				.col.l6.s12
+					h5.white-text Quailty Produce is Our Passion!
+					p.grey-text.text-lighten-4 Contacts Us
+				.col.l4.offset-l2.s12
+					h5.white-text Links
+					ul
+						li
+							a.grey-text.text-lighten-3(href='mailto:info@mazaofresh.com') Email
+						li
+							a.grey-text.text-lighten-3(href='#!') Telephone / Mobile
+		.footer-copyright
 			.container
-				p.text-muted &copy;Mazao Fresh 
+				| © 2015 Mazao Fresh
+				a.grey-text.text-lighten-4.right(href='#!') More Links
 
-			script(src='https://code.jquery.com/jquery-1.11.3.min.js')
-			script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+	//Import jQuery before materialize.js
+	script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js")
+	script $(".button-collapse").sideNav();
+	script $(document).ready(function() {$('select').material_select();});

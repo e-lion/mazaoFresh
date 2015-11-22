@@ -6,7 +6,7 @@ var User = require('../app/models/user');
 var config = require('../config');
 
 
-var apiRoutes = express.Router(); 
+var apiRoutes = express.Router();
 
 app.set('superSecret', config.secret);
 
@@ -17,9 +17,11 @@ apiRoutes.post('/register', function(req, res) {
 		password: req.body.password
 	});
 	user.save(function(err) {
-		if(err) throw err;
-			console.log('User saved!');
-			res.json({status: "success"});
+		if (err) throw err;
+		console.log('User saved!');
+		res.json({
+			status: "success"
+		});
 	});
 });
 
@@ -27,7 +29,9 @@ apiRoutes.post('/register', function(req, res) {
 
 //return a random message at /api
 apiRoutes.get('/', function(req, res) {
-	res.json({ message: 'Welcome to the coolest API on earth!'});	
+	res.render('api_v', {
+		message: 'Welcome to the coolest API on earth!'
+	});
 });
 
 // route to authenticate a user (POST http://localhost:8080/api/authenticate)
@@ -41,12 +45,18 @@ apiRoutes.post('/authenticate', function(req, res) {
 		if (err) throw err;
 
 		if (!user) {
-			res.json({ success: false, message: 'Authentication failed. User not found.' });
+			res.json({
+				success: false,
+				message: 'Authentication failed. User not found.'
+			});
 		} else if (user) {
 
 			// check if password matches
 			if (user.password != req.body.password) {
-				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+				res.json({
+					success: false,
+					message: 'Authentication failed. Wrong password.'
+				});
 			} else {
 
 				// if user is found and password is right
@@ -61,7 +71,7 @@ apiRoutes.post('/authenticate', function(req, res) {
 					message: 'Enjoy your token!',
 					token: token
 				});
-			}   
+			}
 
 		}
 
@@ -71,21 +81,24 @@ apiRoutes.post('/authenticate', function(req, res) {
 //route middleware to verify a token
 apiRoutes.use(function(req, res, next) {
 	var token = req.body.token || req.query.token || req.headers['x-access-token'];
-	
+
 	//decode token
-	if(token) {
+	if (token) {
 		jwt.verify(token, app.get('superSecret'), function(err, decoded) {
 			if (err) {
-				return res.json({ success: false, message: 'Failed to authenticate token'});
+				return res.json({
+					success: false,
+					message: 'Failed to authenticate token'
+				});
 			} else {
-				
+
 				//if everthing is good, save to request for use in other routes
 				req.decoded = decoded;
 				next();
 			}
 		});
 	} else {
-		
+
 		//if no token, return error
 		return res.status(403).send({
 			success: false,
