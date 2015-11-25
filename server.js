@@ -1,13 +1,12 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var favicon = require('serve-favicon');
-var morgan = require('morgan');
-var mongoose = require('mongoose');
-
-var config = require('./config');
+var express = require('express'),
+		app = express(),
+		path = require('path'),
+		bodyParser = require('body-parser'),
+		cookieParser = require('cookie-parser'),
+		favicon = require('serve-favicon'),
+		morgan = require('morgan'),
+		mongoose = require('mongoose'),
+		config = require('./config');
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
@@ -26,7 +25,9 @@ mongoose.connect(config.database);
 //.use :used for establishing middleware for Express
 // use body parser so we can get info from POST and/or URL parameters
 //app.use(favicon(path.join(__dirname, 'public', 'favicoc.ico')));
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));

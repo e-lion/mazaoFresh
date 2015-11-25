@@ -2,7 +2,7 @@ extends layout
 
 block content
 	div
-			form.col.s12
+			form.col.s12(name="order_form", method="post", action="#" )
 				.row
 					.input-field.col.s6
 						input#first_name.validate(type='text')
@@ -25,7 +25,24 @@ block content
 						option(value='2') Fruit Box
 						option(value='3') Mix Box
 					label Choose Your Fruit / Vegtable Box:
+				.row
+					.input-field.col.s12
+						textarea#textarea1.materialize-textarea
+						label(for='textarea1') Enter your custom selection
+					p Make a Choice
+					p
+						input#test6(type='checkbox', checked='checked')
+						label(for='test1') Apples
+					p
+						input#test6(type='checkbox')
+						label(for='test6') Pears
+					p
+						input#test6(type='checkbox', checked='checked')
+						label(for='test6') Oranges
+					p
+						input#test6(type='checkbox', checked='checked')
+						label(for='test6') Bananas
 
-				a.waves-effect.waves-light.btn Sumbit
+					a.waves-effect.waves-light.btn Sumbit
 
 

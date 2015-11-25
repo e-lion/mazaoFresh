@@ -1,9 +1,9 @@
 var express = require('express');
-var router = express.Router();
-var jwt = require('jsonwebtoken');
-var app = express();
-var User = require('../app/models/user');
-var config = require('../config');
+		router = express.Router(),
+		jwt = require('jsonwebtoken'),
+		app = express(),
+		User = require('../app/models/user'),
+		config = require('../config');
 
 
 var apiRoutes = express.Router();
@@ -24,8 +24,6 @@ apiRoutes.post('/register', function(req, res) {
 		});
 	});
 });
-
-
 
 //return a random message at /api
 apiRoutes.get('/', function(req, res) {
