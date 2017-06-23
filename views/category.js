@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
- var cetegorySchema= {
+ var categorySchema= {
  	_id: {type: String},
  	parent: {
  		type: String,
@@ -12,7 +12,6 @@ var mongoose = require('mongoose');
  	}]
  };
 
- module.exports = new mongoose.Schema(cetegorySchema);
- module.exports.cetegorySchema = cetegorySchema;
+ module.exports = new mongoose.Schema(categorySchema);
+ module.exports.categorySchema = categorySchema;
 
- 
